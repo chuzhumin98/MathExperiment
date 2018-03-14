@@ -34,3 +34,12 @@ box on
 grid on
 legend('原始数据点','分段线性插值','分段三次插值','三次样条插值','Location','NorthWest')
 saveas(gcf, '三种插值方法效果比较.png')
+%% 这一部分我们利用数值积分求解围成区域的面积
+% 计算上下线的差值，进而对差值做数值积分
+LinearDelta = Linear(:,1) - Linear(:,2);
+PchipDelta = Pchip(:,1) - Pchip(:,2);
+SplineDelta = Spline(:,1) - Spline(:,2);
+S_linear = trapz(X, LinearDelta); %采用梯形公式求数值积分
+S_pchip = trapz(X, PchipDelta);
+S_spline = trapz(X, SplineDelta);
+[S_linear, S_pchip, S_spline] %输出积分结果
