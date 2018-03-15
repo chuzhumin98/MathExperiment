@@ -43,3 +43,8 @@ S_linear = trapz(X, LinearDelta); %采用梯形公式求数值积分
 S_pchip = trapz(X, PchipDelta);
 S_spline = trapz(X, SplineDelta);
 [S_linear, S_pchip, S_spline] %输出积分结果
+%% 将加工所需数据导出（采用分段三次和三次样条插值的平均值作为参数值）
+dataOut(:,1) = X; %第一列为x
+dataOut(:,2) = (Pchip(:,1)+Spline(:,1))./2; %第二列为y1
+dataOut(:,3) = (Pchip(:,2)+Spline(:,2))./2; %第三列为y2
+csvwrite('output.csv',dataOut)
