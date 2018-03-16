@@ -25,3 +25,7 @@ box on
 grid on
 legend('原始数据点','分段线性插值','分段三次插值','三次样条插值','Location','NorthWest')
 saveas(gcf, '三种插值方法效果比较.png')
+%% 下面计算三种插值下的车流量估计值
+S_linear = sum(Linear)
+S_pchip = sum(Pchip)
+S_spline = sum(Spline)
