@@ -14,5 +14,15 @@ box on
 xlabel('x(m)')
 ylabel('y(m)')
 ylim([0 100])
-title(strcat('v_1=',num2str(v1),'时x-y的航线曲线图.png'))
+title(strcat('v_1=',num2str(v1),'时x-y的航线曲线图'))
 saveas(gcf, strcat('v1=',num2str(v1),'时x-y的航线曲线图.png'))
+%% 绘制y-t图，从而得到渡河所需时间
+figure
+plot(t(:,1),x(:,2),'LineWidth',2)
+grid on
+box on
+xlabel('t(s)')
+ylabel('y(m)')
+ylim([0 100])
+title(strcat('v_1=',num2str(v1),'时y-t的变化曲线'))
+saveas(gcf, strcat('v1=',num2str(v1),'时y-t的变化曲线.png'))
