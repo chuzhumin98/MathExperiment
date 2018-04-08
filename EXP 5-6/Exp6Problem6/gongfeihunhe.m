@@ -4,9 +4,7 @@
 
 function f = gongfeihunhe(XT, a, b, c, P, Q)
     n = length(a);
-    for i = 1:n-1
-        x(i) = XT(i); %各组分含量
-    end
+    x(1:n-1) = XT(1:n-1); %各组分含量
     x(n) = 1 - sum(x(1:n-1)); %约束条件，组分和为1
     T = XT(n); %温度T
     den = x * Q'; %复杂求和式的分母
