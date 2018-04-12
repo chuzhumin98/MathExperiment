@@ -5,6 +5,6 @@ function f = atomposition(X, Point1, Point2, Distance)
     f = 0; %初始化距离和为0
     for i = 1:length(Point1)
         delta = (Xused(Point1(i),:)-Xused(Point2(i),:));
-        f = f + (delta * delta' - Distance(i))^2;
+        f = f + (delta * delta' - Distance(i)^2)^2;
     end
 end
