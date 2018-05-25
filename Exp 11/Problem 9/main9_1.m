@@ -13,3 +13,8 @@ hold on
 splitNum = 0.2/2;
 plot(samples, ones(1,n)*splitNum, 'LineWidth',1.5)
 box on; grid on
+xlabel('积分下限')
+ylabel('积分值')
+title('采用蒙特卡洛法求解此积分')
+legend('积分值','常数值')
+saveas(gcf, 'figure1.png')
