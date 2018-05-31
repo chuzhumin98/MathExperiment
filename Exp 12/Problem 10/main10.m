@@ -22,3 +22,10 @@ legend('left value', 'right value', 'Location', 'NorthWest')
 grid on; box on
 title('n_2 vs equation value')
 saveas(gcf, 'n_2 vs value.png')
+%% 临界值的计算
+numsmale = (n1 - 1) * data(:, 3) .^ 2 - data(:, 5) .^ 2;
+densmale = (data(:,2) - data(:,4)) .^ 2 * n1 / z / z - data(:,3) .^ 2;
+n2smale = numsmale ./ densmale; 
+numsfemale = (n1 - 1) * data(:, 7) .^ 2 - data(:, 9) .^ 2;
+densfemale = (data(:,6) - data(:,8)) .^ 2 * n1 / z / z - data(:,7) .^ 2;
+n2sfemale = numsfemale ./ densfemale; 
